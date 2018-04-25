@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="world" class="com.tutorial.beans.World">
+		<property name="hello" value="Hello World!"></property>
+	</bean>
+	
+<!-- 	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean> -->
+	
+	<bean class="com.tutorial.beans.TutorialBeanPostProcessor"></bean>
+	
+	<bean id="person" class="com.tutorial.beans.Person" autowire="byName"> <!-- 	 init-method="Init" destroy-method="End" -->
+		<property name="id" value="1"></property>
+		<property name="name" value="Michael"></property>
+		<property name="surname" value="Fassbender"></property>		
+	</bean>
+	
+<!-- 		<property name="country"> -->
+<!-- 			<bean id="country" class="com.tutorial.beans.Country"> -->
+<!-- 				<property name="name" value="Germany"></property> -->
+<!-- 				<property name="city"> -->
+<!-- 					<list> -->
+<!-- 						<bean id="cityBerlin" class="com.tutorial.beans.City"> -->
+<!-- 							<property name="name" value="Berlin"></property> -->
+<!-- 						</bean> -->
+<!-- 						<bean id="city" class="com.tutorial.beans.City"> -->
+<!-- 							<property name="name" value="Hamburg"></property> -->
+<!-- 						</bean> -->
+<!-- 					</list> -->
+<!-- 				</property> -->
+<!-- 			</bean>	 -->
+<!-- 		</property> -->
+	
+	<bean id="country" class="com.tutorial.beans.Country">
+		<property name="name" value="Germany"></property>
+	</bean>
+	
+	<bean id="city" class="com.tutorial.beans.City">
+		<property name="name" value="Heidelberg"></property>
+	</bean>
+		
+<!-- 	<alias name="person" alias="personBean"/> -->
+
+</beans>
